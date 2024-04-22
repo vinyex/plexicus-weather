@@ -18,8 +18,8 @@
 					:key="`location-${index}`"
 					class="border-b border-gray-700"
 					:class="{
-						'bg-green-400 text-white': item.state === activeCurrent,
-						'bg-gray-800': item.state !== activeCurrent,
+						'bg-green-400 text-white': item.lat === activeCurrent,
+						'bg-gray-800': item.lat !== activeCurrent,
 					}"
 				>
 					<th
@@ -65,7 +65,7 @@ const { findWeather } = useGlobal();
  * Finding weather after clicked button
  */
 const findingWeather = async (item: any) => {
-	activeCurrent.value = item.state;
+	activeCurrent.value = item.lat;
 	await findWeather(item.name);
 };
 </script>
