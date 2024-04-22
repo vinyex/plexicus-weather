@@ -16,7 +16,11 @@
 				<tr
 					v-for="(item, index) in items"
 					:key="`location-${index}`"
-					class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+					class="border-b border-gray-700"
+					:class="{
+						'bg-green-400 text-white': index === activeCurrent,
+						'bg-gray-800': index !== activeCurrent,
+					}"
 				>
 					<th
 						scope="row"
@@ -28,7 +32,7 @@
 					<td class="text-center px-6 py-4">
 						<button
 							class="inline-flex justify-center items-center py-2 px-2 md:py-3 md:px-5 text-base font-medium text-center text-white rounded-lg bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 dark:focus:ring-blue-900"
-							@click="findingWeather(item)"
+							@click="findingWeather(item, index)"
 						>
 							Get weather
 						</button>
@@ -48,6 +52,11 @@ defineProps({
 });
 
 /**
+ * Define active location
+ */
+const activeCurrent = ref(-1);
+
+/**
  * composables functions inside useGlobal context
  */
 const { findWeather } = useGlobal();
@@ -55,7 +64,8 @@ const { findWeather } = useGlobal();
 /**
  * Finding weather after clicked button
  */
-const findingWeather = async (item: any) => {
+const findingWeather = async (item: any, index: number) => {
+	activeCurrent.value = index;
 	await findWeather(item.name);
 };
 </script>

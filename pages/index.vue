@@ -2,6 +2,25 @@
 	<div>
 		<Jumbotron />
 		<Transition>
+			<section
+				v-if="store.geoLocations.list.length < 1"
+				class="flex flex-col justify-center items-center"
+			>
+				<figure class="max-w-lg">
+					<img
+						class="h-auto max-w-full rounded-lg"
+						src="/empty.png"
+						alt="Empty current location"
+					/>
+					<figcaption
+						class="mt-2 text-sm text-center text-gray-500 dark:text-gray-400"
+					>
+						Please type your desire location to track the weather
+					</figcaption>
+				</figure>
+			</section>
+		</Transition>
+		<Transition>
 			<div
 				v-if="store.geoLocations.current"
 				class="w-full border border-gray-200 shadow"
