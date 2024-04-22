@@ -1,75 +1,45 @@
-# Nuxt 3 Minimal Starter
+# Minimalist Weather App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Prerequisite
+
+1. Make sure your device already installed npm / yarn / node (latest version)
+2. Have a github account
 
 ## Setup
 
-Make sure to install the dependencies:
+1. Make sure to clone this project
 
 ```bash
-# npm
+git clone https://github.com/vinyex/plexicus-weather.git
+```
+
+2. Navigate to the folder project
+
+```bash
+cd plexicus-weather
+```
+
+3. Run the `npm install` command
+
+```bash
 npm install
+```
 
-# pnpm
-pnpm install
+4. Create a new file in root directory `.env` , duplicate from file `.env.example` and the inside `.env` should look like below
 
-# yarn
-yarn install
-
-# bun
-bun install
+```bash
+API_GEOLOCATION_KEY=some-value
+API_GEOLOCATION_URL=some-value
+API_WEATHER_URL=some-value
+API_WEATHER_KEY=some-value
 ```
 
 ## Development Server
 
-Start the development server on `http://localhost:3000`:
+1. Start the application
 
 ```bash
-# npm
 npm run dev
-
-# pnpm
-pnpm run dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm run build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm run preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+2. Navigate to browser on `http://localhost:3000`
